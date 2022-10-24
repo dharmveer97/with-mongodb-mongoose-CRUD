@@ -1,28 +1,17 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const HeroSchema = new mongoose.Schema({
-  superHro:{
+  superHero: {
     type: String,
-    required: [true, "Please name this hero"],
+    required: [true, 'Please name this hero'],
     trim: true,
     unique: true,
   },
-  realName:{
+  realName: {
     type: String,
     required: true,
-    maxLength:[200,"Please keep real name short"]
-  }
-})
+    maxLength: [200, 'Please keep real name short'],
+  },
+});
 
-module.exports = mongoose?.model.Hero || mongoose.model('Hero', HeroSchema)
-
-
-
-// const bookSchema = new mongoose.Schema({
-//     name: String,
-//     genre: String,
-//     authorID: String
-// })
-
-
-// module.exports = mongoose.model("Books", bookSchema)
+export default mongoose.models.Hero || mongoose.model('Hero', HeroSchema);

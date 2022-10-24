@@ -12,45 +12,55 @@ export default async (req, res) => {
   switch (method) {
     case 'GET':
       try {
-        const hero = Hero.findById(id);
-        if (!hero) {
-          res.status(400).json({ success: false , message: error.message|| "Failed to find hero"});
+        const heros = await Hero.findById(id);
+
+        if (!heros) {
+          res.status(400).json({
+            success: false,
+            message: error.message,
+          });
         }
         res.status(200).json({ success: true, hero: heros });
       } catch (error) {
-        res.status(400).json({ success: false, message: error.message|| "Failed" });
+        res.status(400).json({ success: false, message: error.message });
       }
 
       break;
+    case 'PUT':
+      try {
+        const heros = Hero.findByIdAndUpdate(id, req.body, function (err) {
+          if (err) {
+            console.log(err);
+          }
+        });
+        if (!heros) {
+          res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true });
+      } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+      }
+      break;
 
-    // case 'PUT':
-    //   try {
-    //     const hero = Hero.findByIdAndUpdate(id, req.body, {
-    //       new: true,
-    //       runValidators: true,
-    //     });
-    //     if (!hero) {
-    //       res.status(400).json({ success: false });
-    //     }
-    //     res.status(200).json({ success: true, hero: heros });
-    //   } catch (error) {
-    //     res.status(400).json({ success: false, message: error.message });
-    //   }
+    case 'DELETE':
+      try {
+        const hero = Hero.deleteOne({ _id: id })
+          .then(function () {
+            console.log('Data deleted'); // Success
+          })
+          .catch(function (error) {
+            console.log(error); // Failure
+          });
 
-    //   break;
-
-    // case 'DELETE':
-    //   try {
-    //     const hero = Hero.deleteOne({ _id: id });
-    //     if (!hero) {
-    //       res.status(400).json({ success: false });
-    //     }
-    //     res.status(200).json({ success: true, hero: heros });
-    //   } catch (error) {
-    //     res.status(400).json({ success: false, message: error.message });
-    //   }
-
-    //   break;
+        // const hero = Hero.deleteOne({ _id: id });
+        if (!hero) {
+          res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true });
+      } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+      }
+      break;
     default:
       res.status(400).json({ success: false });
       break;
