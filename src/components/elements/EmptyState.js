@@ -14,7 +14,7 @@ function EmptyState() {
 
       <Card.Body css={{ py: 20 }}>
         <Text size={30} align="center">
-          No Hero Found!.
+          No Data Found!
         </Text>
       </Card.Body>
       <Card.Divider />

@@ -42,7 +42,7 @@ function EachHero({ heros }) {
         Identity of the hero
       </Text>
       <Grid.Container gap={2} justify="center" css={{ marginTop: 20 }}>
-        <CardItem data={heros} isSmall hideEditButton hideViewButton handleDelete={handleDelete} />
+        <CardItem data={heros} isSmall hideViewButton handleDelete={handleDelete} />
       </Grid.Container>
     </Layout>
   );
