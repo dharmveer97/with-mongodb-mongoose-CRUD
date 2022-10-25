@@ -1,6 +1,6 @@
-import dbConnect from '../../../db/dbconnect';
+import dbConnect from '../../../../db/dbconnect';
 
-import Hero from '../../../modals/Hero';
+import Hero from '../../../../modals/Hero';
 
 export default async (req, res) => {
   const { method } = req;
