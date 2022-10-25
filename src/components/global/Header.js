@@ -3,6 +3,7 @@ import {
   styled,
   Navbar, Button, Link, Text,
 } from '@nextui-org/react';
+import config from '../../utils/config';
 
 const Box = styled('div', {
   boxSizing: 'border-box',
@@ -34,15 +35,9 @@ function Header() {
             />
           </svg>
           <Text b color="inherit" hideIn="xs">
-            ACME
+            {config.siteName}
           </Text>
         </Navbar.Brand>
-        <Navbar.Content hideIn="xs">
-          <Navbar.Link href="#">Features</Navbar.Link>
-          <Navbar.Link isActive href="#">Customers</Navbar.Link>
-          <Navbar.Link href="#">Pricing</Navbar.Link>
-          <Navbar.Link href="#">Company</Navbar.Link>
-        </Navbar.Content>
         <Navbar.Content>
           <Navbar.Link color="inherit" href="#">
             Login

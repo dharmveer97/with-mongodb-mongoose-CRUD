@@ -5,14 +5,22 @@ const data = [{ title: 'First item' }, { title: 'Second item' }, { title: 'Third
 
 function Hero() {
   return (
-    <Grid.Container gap={2} justify="center">
-      {data?.map((element) => (
-        <Grid xs={4}>
-          <CardItem>{element.title}</CardItem>
-        </Grid>
-      ))}
-
-    </Grid.Container>
+    <div className="mt-4">
+      <Grid.Container gap={2} justify="center">
+        {data && data.map((element) => {
+          if (!element.title) return null;
+          return (
+            <Grid
+              sm={12}
+              md={5}
+              css={{ justifyContent: 'center' }}
+            >
+              <CardItem title={element.title} />
+            </Grid>
+          );
+        })}
+      </Grid.Container>
+    </div>
   );
 }
 
