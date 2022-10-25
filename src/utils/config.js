@@ -9,6 +9,6 @@ export default {
   address: 'London Uk',
   telephone: '123131',
   email: 'test@hotmail.com',
-  apiUrl: 'http://localhost:3000',
-  // apiUrl: 'https://test.vercel.app',
+  apiUrl: 'http://localhost:3000', // for development
+  // apiUrl: 'https://test.vercel.app', // for live
 };
