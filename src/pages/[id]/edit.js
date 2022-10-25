@@ -43,7 +43,7 @@ function EditHero({ heros }) {
       <HeroForm
         onSubmit={handleForm}
         handleChange={handleChange}
-        form={form}
+        initialValues={form}
         buttonText="Update Info"
         heading="Edit Identity"
       />

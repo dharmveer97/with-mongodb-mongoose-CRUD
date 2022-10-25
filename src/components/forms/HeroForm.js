@@ -9,7 +9,7 @@ import {
 import { Button, Input } from '../elements';
 
 function HeroForm({
-  onSubmit, form, buttonText, handleChange, heading,
+  onSubmit, initialValues, buttonText, handleChange, heading,
 }) {
   return (
     <form onSubmit={onSubmit}>
@@ -35,7 +35,7 @@ function HeroForm({
             onChange={handleChange}
             type="text"
             name="superHero"
-            value={form?.superHero}
+            value={initialValues?.superHero}
             required
           />
           <Spacer y={1} />
@@ -45,7 +45,7 @@ function HeroForm({
             onChange={handleChange}
             type="text"
             name="realName"
-            value={form?.realName}
+            value={initialValues?.realName}
             required
           />
           <Spacer y={1} />
