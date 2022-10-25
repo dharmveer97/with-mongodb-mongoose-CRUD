@@ -2,6 +2,8 @@ import React from 'react';
 import { styled, Container, Text } from '@nextui-org/react';
 import config from '../../utils/config';
 
+import DarkMode from './DarkMode';
+
 const Wrapper = styled('div', {
   textAlign: 'center',
   marginTop: '40px',
@@ -17,7 +19,7 @@ function Footer() {
 
           . All rights reserved.
         </Text>
-
+        <DarkMode />
       </Container>
 
     </Wrapper>
