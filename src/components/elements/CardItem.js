@@ -4,13 +4,16 @@ import {
 
 import Button from './Button';
 
-function CardItem({ data }) {
+function CardItem({
+  data, hideEditButton, hideViewButton, hideDeleteButton, isSmall,
+}) {
+  if (!data) return null;
   return (
     <Card
       isPressable
       isHoverable
       variant="bordered"
-      css={{ mw: '400px' }}
+      css={{ mw: isSmall ? '40%' : '' }}
     >
       {data.superHero && (
       <Card.Header>
@@ -31,15 +34,26 @@ function CardItem({ data }) {
       <Card.Divider />
       <Card.Footer>
         <Row justify="flex-end">
+          {!hideEditButton && (
           <Button color="primary" auto ghost as={Link} size="sm" href={`/${data._id}`} css={{ marginRight: '10px' }}>
             Edit Hero
           </Button>
+          )}
+          {!hideViewButton && (
           <Button as={Link} size="sm" href="/">
             View Hero
           </Button>
+          )}
+          {!hideDeleteButton
+          && (
+          <Button size="sm" color="error">
+            Delete Hero
+          </Button>
+          )}
         </Row>
       </Card.Footer>
     </Card>
   );
 }
+
 export default CardItem;

@@ -3,7 +3,7 @@ import CardItem from '../elements/CardItem';
 
 function Hero({ data }) {
   return (
-    <Grid.Container gap={2} justify="center" mt="70px">
+    <Grid.Container gap={2} justify="center" css={{ marginTop: 50 }}>
       {data && data.map((element) => {
         if (!element) return null;
         return (
@@ -13,7 +13,7 @@ function Hero({ data }) {
             md={5}
             css={{ justifyContent: 'center' }}
           >
-            <CardItem data={element} />
+            <CardItem data={element} hideDeleteButton />
           </Grid>
         );
       })}
