@@ -36,6 +36,7 @@ function HeroForm({
             type="text"
             name="superHero"
             value={form?.superHero}
+            required
           />
           <Spacer y={1} />
           <Input
@@ -45,6 +46,7 @@ function HeroForm({
             type="text"
             name="realName"
             value={form?.realName}
+            required
           />
           <Spacer y={1} />
           <Button type="submit">{buttonText || 'Add New Hero'}</Button>

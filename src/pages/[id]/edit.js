@@ -43,7 +43,7 @@ function EditHero({ heros }) {
         onSubmit={handleForm}
         handleChange={handleChange}
         form={form}
-        buttonText="Edit a hero"
+        buttonText="Update Info"
         heading="Edit Identity"
       />
     </Layout>
