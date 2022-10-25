@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { NextSeo } from 'next-seo';
 import config from '../utils/config';
 
 import HeroForm from '../components/forms/HeroForm';
-
 import Layout from '../components/Layout';
 
 function AddNewHero() {
@@ -40,6 +40,10 @@ function AddNewHero() {
   };
   return (
     <Layout>
+      <NextSeo
+        title="Add SuperHero"
+        description="Super heros in the world"
+      />
       <HeroForm
         onSubmit={handleForm}
         handleChange={handleChange}
