@@ -24,6 +24,9 @@ function CardItem({ data }) {
           {' '}
           | No alter egos found || Justice League Of America, Batman Family
         </Text>
+        <Text css={{ fontWeight: '600', textDecoration: 'underline' }}>
+          Reveal Identity
+        </Text>
       </Card.Body>
       <Card.Divider />
       <Card.Footer>
