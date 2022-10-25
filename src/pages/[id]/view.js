@@ -4,6 +4,7 @@ import { Grid, Text } from '@nextui-org/react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import { CardItem } from '../../components/elements';
+import config from '../../utils/config';
 
 function EachHero({ heros }) {
   const router = useRouter();
@@ -11,7 +12,7 @@ function EachHero({ heros }) {
 
   const handleDelete = async () => {
     try {
-      const res = await axios(`http://localhost:3000/api/hero/${heroId}`, {
+      const res = await axios(`${config.apiUrl}/api/hero/${heroId}`, {
         method: 'DELETE',
       });
       if (res) {
@@ -44,7 +45,7 @@ function EachHero({ heros }) {
 
 export async function getServerSideProps(params) {
   const { id } = params.params;
-  const res = await axios(`http://localhost:3000/api/hero/${id}`);
+  const res = await axios(`${config.apiUrl}/api/hero/${id}`);
   const { hero } = res.data;
   return {
     props: { heros: hero }, // will be passed to the page component as props

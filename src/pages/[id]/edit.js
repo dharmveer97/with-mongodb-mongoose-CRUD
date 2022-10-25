@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import config from '../../utils/config';
 
 import Layout from '../../components/Layout';
 import HeroForm from '../../components/forms/HeroForm';
@@ -23,7 +24,7 @@ function EditHero({ heros }) {
   const handleForm = async (e) => {
     try {
       e.preventDefault();
-      const res = await axios(`http://localhost:3000/api/hero/${heroId}`, {
+      const res = await axios(`${config.apiUrl}/api/hero/${heroId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +53,7 @@ function EditHero({ heros }) {
 
 export async function getServerSideProps(params) {
   const { id } = params.params;
-  const res = await axios(`http://localhost:3000/api/hero/${id}`);
+  const res = await axios(`${config.apiUrl}/api/hero/${id}`);
   const { hero } = res.data;
   return {
     props: { heros: hero }, // will be passed to the page component as props

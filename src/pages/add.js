@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-
 import axios from 'axios';
+import config from '../utils/config';
+
 import HeroForm from '../components/forms/HeroForm';
 
 import Layout from '../components/Layout';
@@ -23,7 +24,7 @@ function AddNewHero() {
   const handleForm = async (e) => {
     try {
       e.preventDefault();
-      const res = await axios('http://localhost:3000/api/hero', {
+      const res = await axios(`${config.apiUrl}/api/hero`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
