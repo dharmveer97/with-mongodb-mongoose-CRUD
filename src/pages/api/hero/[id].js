@@ -1,6 +1,5 @@
-import dbConnect from '../../../db/dbconnect';
-
-import Hero from '../../../modals/Hero';
+import dbConnect from '../../../../db/dbconnect';
+import Hero from '../../../../modals/Hero';
 
 dbConnect();
 
@@ -17,7 +16,7 @@ export default async (req, res) => {
         if (!heros) {
           res.status(400).json({
             success: false,
-            message: error.message,
+            message: 'Something went wrong',
           });
         }
         res.status(200).json({ success: true, hero: heros });
