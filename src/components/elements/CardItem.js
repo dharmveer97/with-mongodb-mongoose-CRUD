@@ -23,7 +23,7 @@ function CardItem({
       <Card.Divider />
       <Card.Body>
         <Text size={20} css={{ fontWeight: '500' }}>
-          My real name
+          My real name is
           {' '}
           {data.realName}
         </Text>
