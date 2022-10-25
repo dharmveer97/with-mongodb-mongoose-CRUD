@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
+import Hero from '../components/home/Hero';
 
 function Index() {
   return (
