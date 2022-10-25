@@ -40,8 +40,8 @@ function AddNewHero() {
   return (
     <Layout>
       <HeroForm
-        onSubmit={handleChange}
-        handleForm={handleForm}
+        onSubmit={handleForm}
+        handleChange={handleChange}
         heading="Add a new Hero Identity"
       />
     </Layout>
