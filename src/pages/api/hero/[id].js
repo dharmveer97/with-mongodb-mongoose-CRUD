@@ -28,7 +28,7 @@ export default async (req, res) => {
       break;
     case 'PUT':
       try {
-        const heros = Hero.findByIdAndUpdate(id, req.body, function (err) {
+        const heros = Hero.findByIdAndUpdate(id, req.body, (err) => {
           if (err) {
             console.log(err);
           }
@@ -45,10 +45,10 @@ export default async (req, res) => {
     case 'DELETE':
       try {
         const hero = Hero.deleteOne({ _id: id })
-          .then(function () {
+          .then(() => {
             console.log('Data deleted'); // Success
           })
-          .catch(function (error) {
+          .catch((error) => {
             console.log(error); // Failure
           });
 

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const { MONGODB_URI } = process.env;
 
 if (!MONGODB_URI) {
   throw new Error(
@@ -16,6 +16,7 @@ if (!MONGODB_URI) {
 let cached = global.mongoose;
 
 if (!cached) {
+  // eslint-disable-next-line no-multi-assign
   cached = global.mongoose = { conn: null, promise: null };
 }
 
@@ -29,9 +30,7 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose?.connect(MONGODB_URI, opts).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose?.connect(MONGODB_URI, opts).then((res) => res);
   }
 
   try {
