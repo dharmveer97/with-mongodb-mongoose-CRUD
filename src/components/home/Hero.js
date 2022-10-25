@@ -8,7 +8,7 @@ function Hero({ data }) {
         if (!element) return null;
         return (
           <Grid
-            key={element.title}
+            key={element._id}
             sm={12}
             md={5}
             css={{ justifyContent: 'center' }}
