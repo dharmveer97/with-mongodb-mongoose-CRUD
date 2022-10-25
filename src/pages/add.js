@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-import {
-  Card,
-  Spacer,
-  Text,
-  Container,
-} from '@nextui-org/react';
 import axios from 'axios';
+import HeroForm from '../components/forms/HeroForm';
 
-import { Button, Input } from '../components/elements';
 import Layout from '../components/Layout';
 
 function AddNewHero() {
@@ -45,44 +39,11 @@ function AddNewHero() {
   };
   return (
     <Layout>
-      <form onSubmit={handleForm}>
-        <Container
-          display="flex"
-          alignItems="center"
-          justify="center"
-          css={{ minHeight: '70vh' }}
-        >
-          <Card css={{ mw: '420px', p: '20px' }} variant="bordered">
-            <Text
-              size={24}
-              weight="bold"
-              css={{
-                as: 'center',
-                mb: '20px',
-              }}
-            >
-              Add a new Hero Identity
-            </Text>
-            <Input
-              placeholder="SuperHero"
-              onChange={handleChange}
-              type="text"
-              name="superHero"
-            />
-            <Spacer y={1} />
-            <Input
-              placeholder="Real Name"
-              css={{ mb: '6px' }}
-              onChange={handleChange}
-              type="text"
-              name="realName"
-            />
-            <Spacer y={1} />
-            <Button type="submit">Add New Hero</Button>
-          </Card>
-
-        </Container>
-      </form>
+      <HeroForm
+        onSubmit={handleChange}
+        handleForm={handleForm}
+        heading="Add a new Hero Identity"
+      />
     </Layout>
   );
 }

@@ -35,7 +35,7 @@ function CardItem({
       <Card.Footer>
         <Row justify="flex-end">
           {!hideEditButton && (
-          <Button color="primary" auto ghost as={Link} size="sm" href={`/${data._id}`} css={{ marginRight: '10px' }}>
+          <Button color="primary" auto ghost as={Link} size="sm" href={`/${data._id}/edit`} css={{ marginRight: '10px' }}>
             Edit Hero
           </Button>
           )}
