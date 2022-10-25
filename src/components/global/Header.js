@@ -43,6 +43,8 @@ function Header() {
           <Navbar.Item>
             <Button
               auto
+              shadow
+              color="gradient"
               flat
               as={Link}
               href="#"
