@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { NextSeo } from 'next-seo';
 import config from '../../utils/config';
 
 import Layout from '../../components/Layout';
@@ -40,6 +41,10 @@ function EditHero({ heros }) {
   };
   return (
     <Layout>
+      <NextSeo
+        title={heros?.superHero}
+        description="Super heros in the world"
+      />
       <HeroForm
         onSubmit={handleForm}
         handleChange={handleChange}

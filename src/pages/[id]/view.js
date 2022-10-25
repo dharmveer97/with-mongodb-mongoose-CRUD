@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Grid, Text } from '@nextui-org/react';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import Layout from '../../components/Layout';
 import { CardItem } from '../../components/elements';
 import config from '../../utils/config';
@@ -24,6 +25,10 @@ function EachHero({ heros }) {
   };
   return (
     <Layout>
+      <NextSeo
+        title={heros?.superHero}
+        description="Super heros in the world"
+      />
       <Text
         align="center"
         size={34}
