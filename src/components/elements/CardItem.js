@@ -4,7 +4,7 @@ import {
 
 import Button from './Button';
 
-function CardItem({ title }) {
+function CardItem({ data }) {
   return (
     <Card
       isPressable
@@ -12,16 +12,16 @@ function CardItem({ title }) {
       variant="bordered"
       css={{ mw: '400px' }}
     >
-      {title && (
+      {data.superHero && (
       <Card.Header>
-        <Text b>{title}</Text>
+        <Text b>{data.superHero}</Text>
       </Card.Header>
       )}
       <Card.Divider />
       <Card.Body css={{ py: '$10' }}>
         <Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the s content.
+          {data.realName}
+          | No alter egos found || Justice League Of America, Batman Family
         </Text>
       </Card.Body>
       <Card.Divider />

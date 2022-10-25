@@ -1,13 +1,11 @@
 import { Grid } from '@nextui-org/react';
 import CardItem from '../elements/CardItem';
 
-const data = [{ title: 'First item' }, { title: 'Second item' }, { title: 'Third item' }];
-
-function Hero() {
+function Hero({ data }) {
   return (
     <Grid.Container gap={2} justify="center" mt="70px">
       {data && data.map((element) => {
-        if (!element.title) return null;
+        if (!element) return null;
         return (
           <Grid
             key={element.title}
@@ -15,7 +13,7 @@ function Hero() {
             md={5}
             css={{ justifyContent: 'center' }}
           >
-            <CardItem title={element.title} />
+            <CardItem data={element} />
           </Grid>
         );
       })}
