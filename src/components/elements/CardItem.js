@@ -1,12 +1,15 @@
 import { Card, Text } from '@nextui-org/react';
 
-function CardItem({ text }) {
+function CardItem({ children }) {
   return (
-    <Card css={{ h: '$24', $$cardColor: '$colors$primary' }}>
+    <Card
+      isPressable
+      isHoverable
+      variant="bordered"
+      css={{ mw: '400px' }}
+    >
       <Card.Body>
-        <Text h6 size={15} color="white" css={{ mt: 0 }}>
-          {text}
-        </Text>
+        <Text>{children}</Text>
       </Card.Body>
     </Card>
   );

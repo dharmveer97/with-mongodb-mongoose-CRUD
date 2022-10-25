@@ -1,37 +1,21 @@
 import React from 'react';
 import {
   styled,
-  Navbar, Button, Link, Text, Card, Radio,
+  Navbar, Button, Link, Text,
 } from '@nextui-org/react';
-
-const VariantsSelectorWrapper = styled('div', {
-  dflex: 'center',
-  position: 'fixed',
-  width: '100%',
-  bottom: '10px',
-  '& .nextui-radio-group-items': {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gridTemplateRows: '1fr',
-    gridColumnGap: '$8',
-    gridRowGap: '$2',
-  },
-});
 
 const Box = styled('div', {
   boxSizing: 'border-box',
 });
 
 function Header() {
-  const [variant, setVariant] = React.useState('static');
-  const variants = ['static', 'floating', 'sticky'];
   return (
     <Box
       css={{
         maxW: '100%',
       }}
     >
-      <Navbar isBordered variant={variant}>
+      <Navbar isBordered variant="floating">
         <Navbar.Brand>
           <svg
             className=""
@@ -70,26 +54,6 @@ function Header() {
           </Navbar.Item>
         </Navbar.Content>
       </Navbar>
-      <VariantsSelectorWrapper>
-        <Card css={{ maxW: '50%' }}>
-          <Card.Body css={{ pt: '$8', px: '$8' }}>
-            <Radio.Group
-              defaultValue="default"
-              label="Select variant"
-              orientation="horizontal"
-              size="sm"
-              value={variant}
-              onChange={setVariant}
-            >
-              {variants.map((item) => (
-                <Radio key={item} value={item}>
-                  {item}
-                </Radio>
-              ))}
-            </Radio.Group>
-          </Card.Body>
-        </Card>
-      </VariantsSelectorWrapper>
     </Box>
   );
 }
