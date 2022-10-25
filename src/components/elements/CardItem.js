@@ -17,18 +17,15 @@ function CardItem({
     >
       {data.superHero && (
       <Card.Header>
-        <Text b>{data.superHero}</Text>
+        <Text size={30} b>{data.superHero}</Text>
       </Card.Header>
       )}
       <Card.Divider />
-      <Card.Body css={{ py: '$10' }}>
-        <Text>
-          {data.realName}
+      <Card.Body>
+        <Text size={20} css={{ fontWeight: '500' }}>
+          My real name
           {' '}
-          | No alter egos found || Justice League Of America, Batman Family
-        </Text>
-        <Text css={{ fontWeight: '600', textDecoration: 'underline' }}>
-          Reveal Identity
+          {data.realName}
         </Text>
       </Card.Body>
       <Card.Divider />
