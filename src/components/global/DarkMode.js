@@ -1,46 +1,18 @@
-import {
-  createTheme,
-  Link,
-  NextUIProvider,
-  styled,
-  Text,
-} from '@nextui-org/react';
+import { Switch, useTheme } from '@nextui-org/react';
+import { useTheme as useNextTheme } from 'next-themes';
+import { SunIcon, MoonIcon } from '../icons';
 
-const darkTheme = createTheme({
-  type: 'dark',
-  theme: {
-    colors: {},
-  },
-});
-
-const StyledApp = styled('div', {
-  dflex: 'center',
-  flexDirection: 'column',
-  minHeight: '100vh',
-});
-
-export default function App() {
+export default function DarkMode() {
+  const { setTheme } = useNextTheme();
+  const { isDark } = useTheme();
   return (
-    <NextUIProvider theme={darkTheme}>
-      <StyledApp className="App">
-        <Text h2>
-          Hello Guys
-          <span role="img" aria-label="text with an emoji">
-            👋🏻
-          </span>
-        </Text>
-        <Text h3 css={{ mb: '$6' }}>
-          NextUI simple dark mode implementation
-        </Text>
-        <Link
-          block
-          color="secondary"
-          target="_blank"
-          href="https://nextui.org/docs/theme/dark-mode"
-        >
-          Click here for more info
-        </Link>
-      </StyledApp>
-    </NextUIProvider>
+    <Switch
+      css={{ marginTop: '10px' }}
+      checked={isDark}
+      size="xl"
+      iconOn={<SunIcon filled />}
+      iconOff={<MoonIcon filled />}
+      onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+    />
   );
 }
