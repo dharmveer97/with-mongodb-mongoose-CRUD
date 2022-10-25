@@ -1,11 +1,12 @@
-import { Button } from '@nextui-org/react';
+import { Button, Loading } from '@nextui-org/react';
 
 function ButtonDefault({
-  children, color, size, ...props
+  children, loading, color, size, ...props
 }) {
   return (
     <Button size={size} color={color || 'primary'} {...props}>
       {children}
+      {loading ? <Loading type="points" color="currentColor" size="sm" /> : ''}
     </Button>
   );
 }

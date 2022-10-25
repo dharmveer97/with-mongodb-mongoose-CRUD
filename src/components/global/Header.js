@@ -47,7 +47,7 @@ function Header() {
               color="gradient"
               flat
               as={Link}
-              href="#"
+              href="/add"
             >
               New Identity
             </Button>
