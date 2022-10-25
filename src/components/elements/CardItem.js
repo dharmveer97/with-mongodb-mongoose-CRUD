@@ -30,7 +30,6 @@ function CardItem({ data }) {
       </Card.Body>
       <Card.Divider />
       <Card.Footer>
-
         <Row justify="flex-end">
           <Button color="primary" auto ghost as={Link} size="sm" href="/" css={{ marginRight: '10px' }}>
             Edit Hero
