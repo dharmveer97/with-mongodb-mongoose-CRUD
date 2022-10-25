@@ -1,8 +1,9 @@
 import React from 'react';
+import { Button } from '@nextui-org/react';
 
 function Hero() {
   return (
-    <div>Hero</div>
+    <div><Button>Click me</Button></div>
   );
 }
 

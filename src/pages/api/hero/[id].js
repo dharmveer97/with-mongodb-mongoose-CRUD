@@ -1,4 +1,4 @@
-import dbConnect from '../../../../db/dbconnect';
+import dbConnect from '../../../utils/dbconnect';
 import Hero from '../../../../modals/Hero';
 
 dbConnect();
