@@ -1,6 +1,8 @@
 import {
-  Card, Text, Button, Row,
+  Card, Text, Row,
 } from '@nextui-org/react';
+
+import Button from './Button';
 
 function CardItem({ title }) {
   return (
@@ -25,10 +27,7 @@ function CardItem({ title }) {
       <Card.Divider />
       <Card.Footer>
         <Row justify="flex-end">
-          <Button size="sm" light>
-            Share
-          </Button>
-          <Button size="sm" color="secondary">
+          <Button>
             Learn more
           </Button>
         </Row>
