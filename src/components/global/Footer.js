@@ -1,15 +1,26 @@
 import React from 'react';
+import { styled, Container, Text } from '@nextui-org/react';
 import config from '../../utils/config';
+
+const Wrapper = styled('div', {
+  textAlign: 'center',
+  marginTop: '40px',
+});
 
 function Footer() {
   return (
-    <div className="bg-gray-100 center">
-      <div className="bg-gray-100 center container mx-auto px-6 pt-10 pb-6 text-center">
-        ©
-        {config.siteName}
-        . All rights reserved.
-      </div>
-    </div>
+    <Wrapper>
+      <Container>
+        <Text h6 size={14} css={{ m: 0 }}>
+          ©
+          {config.siteName}
+
+          . All rights reserved.
+        </Text>
+
+      </Container>
+
+    </Wrapper>
   );
 }
 
