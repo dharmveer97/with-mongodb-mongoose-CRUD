@@ -40,7 +40,7 @@ function CardItem({
           </Button>
           )}
           {!hideViewButton && (
-          <Button as={Link} size="sm" href={`/${data._id}`}>
+          <Button as={Link} size="sm" href={`/${data._id}/view`}>
             View Hero
           </Button>
           )}
