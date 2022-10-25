@@ -27,7 +27,7 @@ function CardItem({ title }) {
       <Card.Divider />
       <Card.Footer>
         <Row justify="flex-end">
-          <Button>
+          <Button size="sm">
             Learn more
           </Button>
         </Row>

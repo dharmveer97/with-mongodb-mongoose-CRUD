@@ -1,9 +1,10 @@
 import React from 'react';
 import {
   styled,
-  Navbar, Button, Link, Text,
+  Navbar, Link, Text,
 } from '@nextui-org/react';
 import config from '../../utils/config';
+import { Button } from '../elements';
 
 const Box = styled('div', {
   boxSizing: 'border-box',
@@ -39,9 +40,6 @@ function Header() {
           </Text>
         </Navbar.Brand>
         <Navbar.Content>
-          <Navbar.Link color="inherit" href="#">
-            Login
-          </Navbar.Link>
           <Navbar.Item>
             <Button
               auto
@@ -49,7 +47,7 @@ function Header() {
               as={Link}
               href="#"
             >
-              Sign Up
+              New Identity
             </Button>
           </Navbar.Item>
         </Navbar.Content>
