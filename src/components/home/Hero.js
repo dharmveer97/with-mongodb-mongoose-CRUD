@@ -1,9 +1,10 @@
 import { Grid } from '@nextui-org/react';
-import CardItem from '../elements/CardItem';
+import { EmptyState, CardItem } from '../elements';
 
 function Hero({ data }) {
   return (
     <Grid.Container gap={2} justify="center" css={{ marginTop: 50 }}>
+      {data.length < 1 && <EmptyState />}
       {data && data.map((element) => {
         if (!element) return null;
         return (

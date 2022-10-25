@@ -5,7 +5,7 @@ import {
 import Button from './Button';
 
 function CardItem({
-  data, hideEditButton, hideViewButton, hideDeleteButton, isSmall,
+  data, hideEditButton, hideViewButton, hideDeleteButton, isSmall, handleDelete,
 }) {
   if (!data) return null;
   return (
@@ -40,13 +40,13 @@ function CardItem({
           </Button>
           )}
           {!hideViewButton && (
-          <Button as={Link} size="sm" href="/">
+          <Button as={Link} size="sm" href={`/${data._id}`}>
             View Hero
           </Button>
           )}
           {!hideDeleteButton
           && (
-          <Button size="sm" color="error">
+          <Button size="sm" color="error" onClick={handleDelete}>
             Delete Hero
           </Button>
           )}

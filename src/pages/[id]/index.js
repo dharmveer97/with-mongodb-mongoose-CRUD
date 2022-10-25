@@ -1,10 +1,26 @@
 import React from 'react';
 import axios from 'axios';
 import { Grid, Text } from '@nextui-org/react';
+import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import { CardItem } from '../../components/elements';
 
 function EachHero({ heros }) {
+  const router = useRouter();
+  const heroId = router?.query?.id;
+
+  const handleDelete = async () => {
+    try {
+      const res = await axios(`http://localhost:3000/api/hero/${heroId}`, {
+        method: 'DELETE',
+      });
+      if (res) {
+        router.push('/');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Layout>
       <Text
@@ -20,7 +36,7 @@ function EachHero({ heros }) {
         Identity of the hero
       </Text>
       <Grid.Container gap={2} justify="center" css={{ marginTop: 20 }}>
-        <CardItem data={heros} isSmall hideEditButton hideViewButton />
+        <CardItem data={heros} isSmall hideEditButton hideViewButton handleDelete={handleDelete} />
       </Grid.Container>
     </Layout>
   );
