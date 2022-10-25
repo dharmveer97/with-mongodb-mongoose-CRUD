@@ -42,7 +42,6 @@ function Header() {
                 {config.siteName}
               </Text>
             </Text>
-
           </div>
 
         </Navbar.Brand>
